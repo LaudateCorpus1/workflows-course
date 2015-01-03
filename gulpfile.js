@@ -41,7 +41,6 @@ gulp.task('compass', function() {
 			sass: 'components/sass',
 			image: 'builds/development/images',
 			style: 'expanded',
-         require: ('susy')
 		})
          .on('error', gutil.log))
 		.pipe(gulp.dest('builds/development/css'))
@@ -53,4 +52,4 @@ gulp.task('watch', function() {
    gulp.watch('components/sass/*.scss', ['compass']);
 });
 
-gulp.task('default', ['coffee', 'js', 'compass']);
+gulp.task('default', ['coffee', 'js', 'compass', 'watch']);
