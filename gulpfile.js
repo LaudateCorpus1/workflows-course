@@ -21,9 +21,11 @@ var env,
     outputDir,
     sassStyle;
 
-env = process.env.NODE_ENV || 'development';
+//env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
+env = 'production';
+
+if (env==='development') {
   outputDir = 'builds/development/';
   sassStyle = 'expanded';
 } else {
@@ -32,6 +34,7 @@ if (env === 'development') {
 }
 
 coffeeSources = ['components/coffee/tagline.coffee'];
+
 jsSources = [
   'components/scripts/rclick.js',
   'components/scripts/pixgrid.js',
@@ -39,7 +42,9 @@ jsSources = [
   'components/scripts/template.js'
 ];
 sassSources = ['components/sass/style.scss'];
+
 htmlSources = [outputDir + '*.html'];
+
 jsonSources = [outputDir + 'js/*.json'];
 
 gulp.task('coffee', function() {
